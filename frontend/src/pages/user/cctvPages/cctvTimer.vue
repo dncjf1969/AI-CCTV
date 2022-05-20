@@ -132,7 +132,6 @@ export default {
           this.showModal = false;
           this.showcomfirm = true;
           // this.setTimecustom = this.setTimecustom;
-          console.log(this.setTimecustom)
           const tests = this.setTimecustom;
           this.countDown = (3600000 * tests);
           this.startTimer()
@@ -158,8 +157,6 @@ export default {
     },
     setTimer () {
       const startdate = new Date()
-      console.log(Date.parse(startdate))
-      console.log(startdate)
       const endDate = new Date(startdate)
       endDate.setHours(endDate.getHours()+1)
       http.post(
@@ -180,8 +177,6 @@ export default {
     },
     doneTimer() {
     const startdate = new Date()
-      console.log(Date.parse(startdate))
-      console.log(startdate)
       http.post(
             '/cctv/set/timer',
         {
@@ -217,24 +212,21 @@ export default {
       )
     },
     countDownTimer() {
-                console.log('들어옴')
                 if (!this.timerState){
                   this.countDown = 0;
                 }
                 if(this.countDown > 0) {
                     setTimeout(() => {
-                        this.countDown -= 1
+                        this.countDown -= 1000
                         this.countDownTimer()
                     }, 1000)
 
                 }else {
                   this.timerState = false;
                 }
-                 console.log(this.countDown)
                     let h = Math.trunc((this.countDown) /1000/ 3600);
-                    let m = Math.trunc((this.countDown )  /1000/ 60) % 60;
-                    let s = Math.trunc((this.countDown)) % 60
-                    console.log(h,m,s)
+                    let m = Math.trunc((this.countDown ) /1000/ 60) % 60;
+                    let s = Math.trunc((this.countDown)/1000) % 60
                     if (10<h) {
                       this.hour = '0'+h
                     }else {
@@ -251,7 +243,6 @@ export default {
                     }else {
                       this.sec = s;
                     }
-                    console.log(this.hour, this.min, this.sec)
 
             }
 

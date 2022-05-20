@@ -40,8 +40,8 @@
         </div>
       </div>
       <div class="flex md4">
-        <p class="d-flex justify--center mb-2" style="font-size:1.25rem; font-weight:bold;">Team 스물다섯 서른하나</p>
-        <img src="@/../public/img/landing-page/DNBBD.png" alt="DNBBD" class="dnbbd">
+        <p class="d-flex justify--center mb-2 align--center" style="font-size:1.25rem; font-weight:bold;">Team 스물다섯 서른하나</p>
+        <!-- <img src="@/../public/img/landing-page/DNBBD.png" alt="DNBBD" class="dnbbd"> -->
       </div>
     </div>
   </div>
